@@ -38,10 +38,7 @@
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
         <h1 class="sitename notranslate">Logisticahub</h1>
       </a>
 
@@ -49,40 +46,17 @@
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <!-- <li><a href="destinations.html">Destinations</a></li> -->
           <li><a href="tours.html">Services</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <!-- <li><a href="blog.html">Blog</a></li> -->
           <li class="dropdown"><a href="#"><span>Get Quote</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <!-- <li><a href="destination-details.html">Destination Details</a></li> -->
-              <!-- <li><a href="tour-details.html">Tour Details</a></li> -->
+
               <li><a href="booking.html"> Air freight Booking</a></li>
               <li><a href="oceanbooking.html">Ocean freight Booking</a></li>
               <li><a href="roadbooking.html">Road freight Booking</a></li>
               <li><a href="expressbooking.html">Express Courier</a></li>
-              <!-- <li><a href="terms.html">Terms</a></li> -->
-              <!-- <li><a href="privacy.html">Privacy</a></li> -->
-              <!-- <li><a href="404.html">404</a></li> -->
             </ul>
           </li>
-          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li> -->
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -118,84 +92,40 @@
             </div>
           </div>
 
-          <div class="col-lg-5">
+  <div class="col-lg-5">
   <div class="booking-form-wrapper" data-aos="fade-left" data-aos-delay="200">
     <div class="booking-form">
-      <h3 class="form-title">Book a Shipment</h3>
+      <h3 class="form-title">Send us a massage</h3>
 
-      <!-- Prevent form submission -->
-      <form action="" class="" onsubmit="return false;">
+      <form id="sendMsg">
 
         <div class="form-group mb-3">
-          <label for="shipment-type">Shipment Type</label>
-          <select name="shipment_type" id="shipment-type" class="form-select" required="">
-            <option value="">Select shipment type</option>
-            <option value="air">Air Freight</option>
-            <option value="ocean">Ocean Freight</option>
-            <option value="road">Road Freight</option>
-            <option value="rail">Rail Freight</option>
-          </select>
+          <label for="shipment-type">fullName</label>
+         <input type="text" id="Name" class="form-control" placeholder="fullName" required>
         </div>
 
         <div class="row">
           <div class="col-md-6">
             <div class="form-group mb-3">
-              <label for="origin">Origin</label>
-              <input type="text" name="origin" id="origin" class="form-control" placeholder="City / Port" required="">
+              <label for="origin">email</label>
+              <input type="email" id="Email" class="form-control" placeholder="email" required>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group mb-3">
-              <label for="destination">Destination</label>
-              <input type="text" name="destination" id="destination" class="form-control" placeholder="City / Port" required="">
+              <label for="destination">subject</label>
+              <input type="text" id="subject" class="form-control" placeholder="Subject" required>
             </div>
           </div>
+        </div>        
+
+        <div class="form-group mb-3">
+          <label for="notes">message</label>
+          <input type="text" id="message" class="form-control" placeholder="message" required style="height: 15vh;">
         </div>
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group mb-3">
-              <label for="pickup-date">Pickup Date</label>
-              <input type="date" name="pickup_date" id="pickup-date" class="form-control" required="">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group mb-3">
-              <label for="delivery-date">Expected Delivery Date</label>
-              <input type="date" name="delivery_date" id="delivery-date" class="form-control">
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group mb-3">
-              <label for="weight">Cargo Weight (kg)</label>
-              <input type="number" name="weight" id="weight" class="form-control" placeholder="e.g. 1200" required="">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group mb-3">
-              <label for="cargo-type">Cargo Type</label>
-              <select name="cargo_type" id="cargo-type" class="form-select" required="">
-                <option value="">Select cargo type</option>
-                <option value="general">General Cargo</option>
-                <option value="fragile">Fragile Goods</option>
-                <option value="perishable">Perishable Goods</option>
-                <option value="hazardous">Hazardous Materials</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- <div class="form-group mb-3">
-          <label for="notes">Additional Instructions</label>
-          <input type="text" name="notes" id="notes" class="form-control" placeholder="Special handling, insurance, etc.">
-        </div> -->
-
-        <!-- Button does NOT submit -->
-        <button type="button" class="btn btn-primary w-100">
-          Get Shipping Quote
+        <button type="submit" class="btn btn-primary w-100">
+          send message
         </button>
 
       </form>
@@ -1022,6 +952,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script type="module" src="email.js"></script>
 
 </body>
 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Logisticahub - forgotten</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="img/favicon.ico" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <div class="container">
+       <div class="login form">
+            <header>Forgotten Password</header>
+            <form onsubmit="return false;">
+                <input type="text" id="forgotEmail" placeholder="Enter your email">
+                <input type="button" onclick="forgotPassword()" class="button" value="forget password">
+            </form>
+        </div>
+  </div> 
+
+
+<!-- FIREBASE SCRIPT -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+import { getAuth, sendPasswordResetEmail } 
+from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDMEdWetMVAcU67LE9Ap2OK0Hc7xM0eRaY",
+  authDomain: "logisticahub-6c129.firebaseapp.com",
+  projectId: "logisticahub-6c129",
+  storageBucket: "logisticahub-6c129.firebasestorage.app",
+  messagingSenderId: "811773110824",
+  appId: "1:811773110824:web:1738991164c323341b631d"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+
+
+// FORGET PASSWORD FUNCTIONALITY
+window.forgotPassword = async () => {
+  const email = document.getElementById("forgotEmail").value;
+
+  if (!email) {
+    alert("Please enter your email first");
+    return;
+  }
+
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      alert("Password reset email sent 📧");
+      window.location.href = "login.html";  // redirect to login page
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+};
+
+</script>
+
+
+
+</body>
+</html>
