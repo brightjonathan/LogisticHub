@@ -512,7 +512,6 @@ function renderShipments(shipments) {
       </div>
 
       <div class="invoice-actions">
-        <button class="edit-btn">Edit</button>
         <button class="delete-btn">Delete</button>
       </div>
     `;
@@ -633,8 +632,8 @@ searchBtn.addEventListener("click", async () => {
 });
 
 // 🔄 RESET
-resetBtn.addEventListener("click", () => {
-  trackingInput.value = "";
-  trackingResult.innerHTML = "";
-});
+// resetBtn.addEventListener("click", () => {
+//   trackingInput.value = "";
+//   trackingResult.innerHTML = "";
+// });
 

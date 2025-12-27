@@ -145,8 +145,8 @@ searchBtn.addEventListener("click", async () => {
 });
 
 // 🔄 RESET
-resetBtn.addEventListener("click", () => {
-  trackingInput.value = "";
-  trackingResult.innerHTML = "";
-});
+// resetBtn.addEventListener("click", () => {
+//   trackingInput.value = "";
+//   trackingResult.innerHTML = "";
+// });
 
