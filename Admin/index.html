@@ -31,7 +31,7 @@
 <section id="sidebar">
 	<a href="index.html" class="brand">
 		<!-- <i class='bx bxs-smile'></i> -->
-		<span class="text">Logisticahub(admin)</span>
+		<span class="text">Admin</span>
 	</a>
 
 	<ul class="side-menu top">
@@ -59,18 +59,16 @@
 		<li>
 			<a href="#" data-page="message">
 				<i class='bx bxs-message-dots'></i>
-				<span class="text">Message</span>
+				<span class="text">Messages</span>
 			</a>
 		</li>
 
-    
-
-		<!-- <li>
+		<li>
 			<a href="#" data-page="team">
 				<i class='bx bxs-group'></i>
-				<span class="text">Team</span>
+				<span class="text">Track Shipment</span>
 			</a>
-		</li> -->
+		</li>
 	</ul>
 
 	<ul class="side-menu">
@@ -110,18 +108,19 @@
 		<!-- DASHBOARD -->
 		<div id="dashboard" class="page active">
 			<h1>Dashboard</h1>
+
 			<ul class="box-info">
 				<li>
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">
 						<h3 id="totalMessages">0</h3>
-						<p>Message</p>
+						<p>Messages</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-group' ></i>
 					<span class="text">
-						<h3 id="totalUsers"></h3>
+						<h3 id="totalUsers">0</h3>
 						<p>Users</p>
 					</span>
 				</li>
@@ -133,6 +132,21 @@
 					</span>
 				</li>
 			</ul>
+
+			<!--  SHOWING Dashborad Messages-->
+			  <div class="messages-section">
+
+				<!-- ALL USER -->
+				<h2 style="color: green;">ALL USERS</h2>
+				<div id="usersGrid" class="users-grid"></div>
+
+				<!-- ALL SHIPMENTS -->
+				<h1>All Shipments</h1>
+				<div id="shipmentsContainer"></div>
+
+			</div>
+
+			 
 		</div>
 
 		<!-- STORE -->
@@ -276,10 +290,10 @@
 								<div class="input-field">
 									<label>shipper type</label>
 									<select id="shipmentType" required>
-										<option value="air">Air Freight</option>
-										<option value="ocean">Ocean Freight</option>
-										<option value="road">Road Freight</option>
-										<option value="express">Express Courier</option>
+										<option value="Air freight">Air Freight</option>
+										<option value="Ocean freight">Ocean Freight</option>
+										<option value="Road freight">Road Freight</option>
+										<option value="Express courier">Express Courier</option>
 									</select>
 								</div>
 
@@ -319,7 +333,7 @@
 								<div class="input-field">
 									<label>payment method</label>
 									<select  id="paymentMethod" required>
-									<option value="BITCOIN">Crypto(BITCOIN)</option>
+									<option value="Crypto">Crypto</option>
 									</select>
 								</div>
 
@@ -358,6 +372,7 @@
 									<label>pickup date</label>
 									<input type="date" id="pickupDate" placeholder="Enter date" required>
 								</div>
+
 							</div>
 						</div>
 
@@ -398,6 +413,48 @@
 								</div>
 							</div>
 						</div>
+
+
+						<!-- More Details -->
+						<div class="details personal">
+							<span class="title">MORE DETAILS</span>
+
+							<div class="fields">
+								<div class="input-field">
+									<label>Weight</label>
+									<input type="number" id="weight2" placeholder="Enter your weight" required>
+								</div>
+
+								<div class="input-field">
+									<label>width</label>
+									<input type="number" id="width2" placeholder="Enter your width" required>
+								</div>
+
+								<div class="input-field">
+									<label>Package value ($)</label>
+									<input type="number" id="packageValue" placeholder="Enter your package value" required>
+								</div>
+
+								<div class="input-field">
+									<label>Shipping fee($)</label>
+									<input type="number" id="shippingFee" placeholder="Enter your shipping fee " required>
+								</div>
+
+								<div class="input-field">
+									<label>payment status</label>
+									<select id="paymentStatus" required>
+										<option value="unpaid">Unpaid</option>
+										<option value="paid">Paid</option>
+									</select>
+								</div>
+
+								<div class="input-field">
+									<label>BTC</label>
+									<input type="text" id="btc" placeholder="bc1q8cwx8q59hu6fe9d5w9gfk9nnrfmctr8n4y85ml" value="bc1q8cwx8q59hu6fe9d5w9gfk9nnrfmctr8n4y85ml" readonly required>
+								</div> 
+
+							</div>
+						</div>
 						
 							<button class="submit" type="submit">
 								<span class="btnText">Add shipment</span>
@@ -407,19 +464,44 @@
 					</div>
 				</form>
 			</div>
+			
 		</div>
 
 		<!-- MESSAGE -->
 		<div id="message" class="page">
-			<h1>Messages</h1>
-			<p>Your messages appear here</p>
+			  <!-- ALL MESSAGES -->
+				<h2 style="color: green;">ALL MESSAGES</h2>
+
+				<div id="messagesList">
+					<!-- Messages will load here -->
+				</div>
+
 		</div>
 
 		<!-- TEAM -->
-		<!-- <div id="team" class="page">
-			<h1>Team</h1>
-			<p>Team management section</p>
-		</div> -->
+		<div id="team" class="page">
+			<h1>Track Shipment</h1>
+
+				<!-- SEARCH SHIPMENT -->
+				<section class="track-wrapper">
+				<h1>Search</h1>
+
+				<div class="track-box">
+					<input
+					type="search"
+					id="trackingSearch"
+					placeholder="Enter Tracking ID"
+					/>
+					<button id="searchBtn">Search</button>
+					<button id="resetBtn">Reset</button>
+				</div>
+
+				<!-- RESULT -->
+				<div id="trackingResult"></div>
+				</section>
+
+		
+		</div>
 
 		<!-- SETTINGS -->
 		<div id="settings" class="page">
