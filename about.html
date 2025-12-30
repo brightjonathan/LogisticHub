@@ -27,10 +27,41 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    /* ===== CHRISTMAS EFFECT ===== */
+    #christmas-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .christmas-item {
+      position: absolute;
+      top: -50px;
+      font-size: 22px;
+      opacity: 0.9;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
+
   
 </head>
 
 <body class="about-page">
+
+    <!-- CHRISTMAS FALLING ITEMS -->
+  <div id="christmas-container"></div>
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -425,6 +456,50 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    const container = document.getElementById("christmas-container");
+    const items = [
+  // Snow & Weather
+  "❄️", "❄️", "❄️", "🌨️",
+
+  // Trees & Nature
+  "🎄", "🌲", "🎄",
+
+  // Gifts & Toys
+  "🎁", "🎁", "🧸", "🎠", "🪀",
+
+  // Decorations
+  "🔔", "🎀", "🕯️", "⭐", "🌟", "✨",
+
+  // Christmas Characters
+  "🎅", "🤶", "🧑‍🎄",
+
+  // Festive Food & Extras
+  "🍪", "🍬", "🍭", "🥛",
+
+  // Party / Fun
+  "🎉", "🎊"
+];
+
+
+    function createFallingItem() {
+      const item = document.createElement("div");
+      item.classList.add("christmas-item");
+
+      item.innerText = items[Math.floor(Math.random() * items.length)];
+      item.style.left = Math.random() * window.innerWidth + "px";
+      item.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      item.style.fontSize = (Math.random() * 15 + 15) + "px";
+
+      container.appendChild(item);
+
+      setTimeout(() => {
+        item.remove();
+      }, 7000);
+    }
+
+    setInterval(createFallingItem, 300);
+  </script>
 
 </body>
 
